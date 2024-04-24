@@ -29,22 +29,22 @@
         "SUDO_USERS": {
             "description": "Daftar User ID pengguna dihitung sebagai admin di semua tempat (pemisah menggunakan space)",
             "required": true
-  },
-  "addons": [
-    {
-    "plan": "heroku-postgresql",
-      "options": {
-        "version": "13"
-      }
-    }
-  ],
-  "buildpacks": [
-    {
-      "url": "heroku/python"
-    }
-  ],
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "eco"
-    }
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "eco"
+        }
+    },
+    "stack": "container"
+}
