@@ -30,21 +30,25 @@
             "description": "Daftar User ID pengguna dihitung sebagai admin di semua tempat (pemisah menggunakan space)",
             "required": true
         }
-    },
-    "addons": [],
-    "buildpacks": [
+    }
+  },
+  "addons": [
+    {
+    "plan": "heroku-postgresql",
+      "options": {
+        "version": "13"
+      }
+    }
+  ],
+  "buildpacks": [
     {
       "url": "heroku/python"
-    },
-    {
-      "url": "https://github.com/interconnectit/heroku-buildpack-ffmpeg"
     }
-    ],
-    "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "eco"
-        }
-    },
-    "stack": "container"
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
 }
